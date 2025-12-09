@@ -56,7 +56,7 @@
   /* Typography */
   --font-thai: 'Sarabun', 'Noto Sans Thai', system-ui, sans-serif;
   --font-heading: 'Prompt', 'Sarabun', system-ui, sans-serif;
-  
+
   /* Font Sizes */
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
@@ -115,11 +115,11 @@
   --bg-secondary: #292524;
   --bg-card: #292524;
   --bg-code: #44403c;
-  
+
   --text-primary: #fafaf9;
   --text-secondary: #d6d3d1;
   --text-muted: #a8a29e;
-  
+
   --primary-500: #f3b774;
   --accent-500: #5fe8c1;
 }
@@ -130,7 +130,7 @@
   --bg-secondary: #e8dcc8;
   --bg-card: #faf6eb;
   --bg-code: #e8dcc8;
-  
+
   --text-primary: #433422;
   --text-secondary: #5c4a35;
   --text-muted: #7a6550;
@@ -166,7 +166,12 @@ body {
    Typography
 =================================== */
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   font-weight: 700;
   line-height: var(--leading-tight);
@@ -438,8 +443,15 @@ em {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .cover-title {
@@ -496,8 +508,15 @@ em {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Blockquotes */
@@ -659,6 +678,23 @@ em {
   transform: none;
 }
 
+/* GitHub Link */
+.github-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.github-link:hover {
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+}
+
 /* ===================================
    Footer
 =================================== */
@@ -684,33 +720,33 @@ em {
     --text-3xl: 1.5rem;
     --container-padding: var(--space-4);
   }
-  
+
   .header-content {
     padding: var(--space-3) var(--space-4);
   }
-  
+
   .logo {
     font-size: var(--text-lg);
   }
-  
+
   .cover-title {
     font-size: var(--text-4xl);
   }
-  
+
   .cover-image {
     max-width: 300px;
   }
-  
+
   .chapter-nav {
     flex-direction: column;
   }
-  
+
   .chapter-nav-btn {
     max-width: 100%;
     align-items: center;
     text-align: center;
   }
-  
+
   .chapter-nav-btn:last-child {
     align-items: center;
     text-align: center;
@@ -725,32 +761,32 @@ em {
     --text-3xl: 1.375rem;
     --text-2xl: 1.25rem;
   }
-  
+
   body {
     font-size: var(--text-base);
   }
-  
+
   .theme-toggle {
     display: none;
   }
-  
+
   .header-actions {
     gap: var(--space-2);
   }
-  
+
   .download-btn span {
     display: none;
   }
-  
+
   .cover-page {
     padding: var(--space-6) var(--space-4);
     min-height: 70vh;
   }
-  
+
   .cover-image {
     max-width: 250px;
   }
-  
+
   .chapter-content table {
     display: block;
     overflow-x: auto;
@@ -760,6 +796,7 @@ em {
 
 /* Print Styles */
 @media print {
+
   .header,
   .nav-menu,
   .chapter-nav,
@@ -768,17 +805,19 @@ em {
   .menu-toggle {
     display: none !important;
   }
-  
+
   .main-content {
     max-width: 100%;
     padding: 0;
   }
-  
+
   .chapter-content {
     page-break-inside: avoid;
   }
-  
-  h1, h2, h3 {
+
+  h1,
+  h2,
+  h3 {
     page-break-after: avoid;
   }
 }
@@ -804,7 +843,9 @@ em {
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* ===================================

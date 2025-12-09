@@ -14,6 +14,10 @@
 
 ---
 
+เปิดอ่านหนังสือออนไลน์ได้ที่ [https://high-spirited-child-book.netlify.app/](https://high-spirited-child-book.netlify.app/)
+
+---
+
 ## 📚 สารบัญ
 
 | บท | ชื่อบท | เนื้อหา |

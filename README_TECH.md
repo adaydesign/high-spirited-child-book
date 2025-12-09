@@ -113,25 +113,22 @@ npm run build
 ls -la dist/
 ```
 
-### การ Deploy
+### การ Deploy บน Netlify
 
-**Vercel:**
-```bash
-npm i -g vercel
-vercel
-```
+เว็บไซต์นี้ใช้ **Netlify** สำหรับการ deploy อัตโนมัติ
 
-**Netlify:**
-```bash
-# ตั้งค่า build command: npm run build
-# ตั้งค่า publish directory: dist
-```
+**การตั้งค่า:**
+1. เชื่อมต่อ Repository กับ Netlify
+2. Netlify จะอ่านค่าจาก `netlify.toml` อัตโนมัติ:
+   - Build command: `npm run build`
+   - Publish directory: `dist`
 
-**Static Server:**
-```bash
-npm run build
-npx serve dist
-```
+**URL:** https://high-spirited-child-book.netlify.app/
+
+**ไฟล์ `netlify.toml` มีการตั้งค่า:**
+- SPA routing (redirect ทุก path ไปที่ index.html)
+- Cache headers สำหรับ static assets
+- Security headers
 
 ---
 

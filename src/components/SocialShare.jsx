@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 const SITE_URL = 'https://high-spirited-child-book.netlify.app';
@@ -8,6 +9,7 @@ export default function SocialShare({ title, compact = false }) {
     const currentUrl = `${SITE_URL}${location.pathname}`;
     const shareTitle = title || SITE_TITLE;
     const shareText = `${shareTitle} - เปลี่ยนมุมมอง เปลี่ยนเด็กดื้อให้เป็นเด็กฉลาด`;
+    const [copied, setCopied] = useState(false);
 
     const shareLinks = [
         {
@@ -46,6 +48,24 @@ export default function SocialShare({ title, compact = false }) {
         window.open(url, '_blank', 'width=600,height=400');
     };
 
+    const handleCopyLink = async () => {
+        try {
+            await navigator.clipboard.writeText(currentUrl);
+            setCopied(true);
+            setTimeout(() => setCopied(false), 2000);
+        } catch (err) {
+            // Fallback for older browsers
+            const textArea = document.createElement('textarea');
+            textArea.value = currentUrl;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            setCopied(true);
+            setTimeout(() => setCopied(false), 2000);
+        }
+    };
+
     return (
         <div className={`social-share ${compact ? 'compact' : ''}`}>
             {!compact && <span className="share-label">แชร์:</span>}
@@ -62,7 +82,25 @@ export default function SocialShare({ title, compact = false }) {
                         {!compact && <span>{link.name}</span>}
                     </button>
                 ))}
+                <button
+                    onClick={handleCopyLink}
+                    className={`share-btn copy-btn ${copied ? 'copied' : ''}`}
+                    title="คัดลอกลิงก์"
+                    style={{ '--share-color': '#6b7280' }}
+                >
+                    {copied ? (
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                        </svg>
+                    ) : (
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                            <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" />
+                        </svg>
+                    )}
+                    {!compact && <span>{copied ? 'คัดลอกแล้ว!' : 'คัดลอก'}</span>}
+                </button>
             </div>
         </div>
     );
 }
+

@@ -937,6 +937,12 @@ em {
   flex-shrink: 0;
 }
 
+.share-btn.copy-btn.copied {
+  background: #10b981;
+  color: white;
+  border-color: #10b981;
+}
+
 /* ===================================
    Chapter Rating
 =================================== */

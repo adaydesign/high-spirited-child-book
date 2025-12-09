@@ -3,6 +3,8 @@ import { Link, useParams, useLocation } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { chapters } from './Navigation';
+import SocialShare from './SocialShare';
+import ChapterRating from './ChapterRating';
 
 // Import all markdown files
 import coverMd from '../content/cover.md?raw';
@@ -31,6 +33,9 @@ const contentMap = {
     '/references': referencesMd,
 };
 
+// Pages that should show rating
+const rateablePages = ['/introduction', '/chapter/1', '/chapter/2', '/chapter/3', '/chapter/4', '/chapter/5', '/conclusion'];
+
 export default function ChapterReader() {
     const location = useLocation();
     const [content, setContent] = useState('');
@@ -48,8 +53,15 @@ export default function ChapterReader() {
 
     // Find current index for navigation
     const currentIndex = chapters.findIndex(ch => ch.path === location.pathname);
+    const currentChapter = chapters[currentIndex];
     const prevChapter = currentIndex > 0 ? chapters[currentIndex - 1] : null;
     const nextChapter = currentIndex < chapters.length - 1 ? chapters[currentIndex + 1] : null;
+
+    // Check if this page should show rating
+    const showRating = rateablePages.includes(location.pathname);
+
+    // Get chapter ID for rating
+    const chapterId = location.pathname.replace(/\//g, '-').replace(/^-/, '') || 'home';
 
     if (isLoading) {
         return (
@@ -82,6 +94,19 @@ export default function ChapterReader() {
                 {content}
             </ReactMarkdown>
 
+            {/* Social Share */}
+            <div className="chapter-footer">
+                <SocialShare title={currentChapter?.label} />
+
+                {/* Rating Section */}
+                {showRating && (
+                    <ChapterRating
+                        chapterId={chapterId}
+                        chapterTitle={currentChapter?.label}
+                    />
+                )}
+            </div>
+
             {/* Chapter Navigation */}
             <nav className="chapter-nav">
                 {prevChapter ? (
@@ -103,3 +128,4 @@ export default function ChapterReader() {
         </article>
     );
 }
+

@@ -878,3 +878,191 @@ em {
   background: var(--primary-200);
   color: var(--primary-900);
 }
+
+/* ===================================
+   Social Share
+=================================== */
+
+.chapter-footer {
+  margin-top: var(--space-10);
+  padding: var(--space-6);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+}
+
+.social-share {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.social-share.compact {
+  gap: var(--space-2);
+}
+
+.share-label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.share-buttons {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: var(--bg-card);
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.share-btn:hover {
+  color: var(--share-color, var(--text-primary));
+  border-color: var(--share-color, var(--primary-300));
+  background: var(--bg-primary);
+  transform: translateY(-2px);
+}
+
+.share-btn svg {
+  flex-shrink: 0;
+}
+
+/* ===================================
+   Chapter Rating
+=================================== */
+
+.chapter-rating {
+  margin-top: var(--space-6);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--neutral-200);
+}
+
+.rating-stats {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-4);
+}
+
+.views-count {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+.views-count .icon {
+  font-size: var(--text-lg);
+}
+
+.rating-display {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.stars-display {
+  display: flex;
+  gap: 2px;
+}
+
+.stars-display .star {
+  background: none;
+  border: none;
+  font-size: var(--text-xl);
+  color: var(--neutral-300);
+  cursor: default;
+  padding: 0;
+}
+
+.stars-display .star.filled {
+  color: #f59e0b;
+}
+
+.rating-text {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+.rate-this {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.rate-label {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+.user-rating {
+  display: flex;
+  gap: 2px;
+}
+
+.user-rating .star {
+  background: none;
+  border: none;
+  font-size: var(--text-2xl);
+  color: var(--neutral-300);
+  cursor: default;
+  padding: var(--space-1);
+  transition: all var(--transition-fast);
+}
+
+.user-rating .star.filled {
+  color: #f59e0b;
+}
+
+.user-rating .star.interactive {
+  cursor: pointer;
+}
+
+.user-rating .star.interactive:hover {
+  transform: scale(1.2);
+  color: #f59e0b;
+}
+
+.user-rating .star:disabled {
+  cursor: default;
+}
+
+/* Mobile adjustments for share/rating */
+@media (max-width: 480px) {
+  .social-share {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .share-btn span {
+    display: none;
+  }
+
+  .share-btn {
+    padding: var(--space-2);
+  }
+
+  .rating-stats {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+
+  .rate-this {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

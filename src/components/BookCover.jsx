@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import SocialShare from './SocialShare';
 
 export default function BookCover() {
     return (
@@ -25,10 +26,11 @@ export default function BookCover() {
                 เริ่มอ่านหนังสือ →
             </Link>
 
-            <div style={{ marginTop: '2rem', color: 'var(--text-muted)', fontSize: 'var(--text-sm)' }}>
+            <div style={{ marginTop: '2rem', marginBottom: '2rem', color: 'var(--text-muted)', fontSize: 'var(--text-sm)' }}>
                 <p>📚 คู่มือสำหรับพ่อแม่ยุคใหม่</p>
                 <p>สำหรับผู้ปกครองที่ดูแลเด็กอายุ 1-6 ขวบ</p>
             </div>
+            <SocialShare title={"อย่ากลัวเด็กดื้อ! เข้าใจลูกน้อยพลังงานสูง"} />
         </div>
     );
 }

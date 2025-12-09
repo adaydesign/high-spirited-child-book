@@ -1,29 +1,146 @@
 <!doctype html>
 <html lang="th">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- SEO Meta Tags -->
-    <title>อย่ากลัวเด็กดื้อ! | เข้าใจลูกน้อยพลังงานสูง</title>
-    <meta name="description" content="คู่มือสำหรับพ่อแม่ยุคใหม่ เข้าใจพฤติกรรมเด็กวัย 1-6 ขวบที่มีพลังงานสูง เปลี่ยนเด็กดื้อให้เป็นเด็กฉลาด กล้าคิด กล้าทำ" />
-    <meta name="keywords" content="เด็กดื้อ, พัฒนาการเด็ก, การเลี้ยงลูก, เด็กพลังงานสูง, Positive Parenting" />
-    <meta name="author" content="ผู้เชี่ยวชาญด้านพัฒนาการเด็ก" />
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="อย่ากลัวเด็กดื้อ! | เข้าใจลูกน้อยพลังงานสูง" />
-    <meta property="og:description" content="เปลี่ยนมุมมอง... เปลี่ยนเด็กดื้อให้เป็นเด็กฉลาด กล้าคิด กล้าทำ" />
-    <meta property="og:type" content="book" />
-    <meta property="og:image" content="/cover.png" />
-    
-    <!-- Thai Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600;700&family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO Meta Tags -->
+  <title>อย่ากลัวเด็กดื้อ! | เข้าใจลูกน้อยพลังงานสูง - คู่มือสำหรับพ่อแม่ยุคใหม่</title>
+  <meta name="title" content="อย่ากลัวเด็กดื้อ! | เข้าใจลูกน้อยพลังงานสูง" />
+  <meta name="description"
+    content="คู่มือสำหรับพ่อแม่ยุคใหม่ เข้าใจพฤติกรรมเด็กวัย 1-6 ขวบที่มีพลังงานสูง เปลี่ยนเด็กดื้อให้เป็นเด็กฉลาด กล้าคิด กล้าทำ ด้วยเทคนิคการเลี้ยงดูเชิงบวก" />
+  <meta name="keywords"
+    content="เด็กดื้อ, พัฒนาการเด็ก, การเลี้ยงลูก, เด็กพลังงานสูง, Positive Parenting, การเลี้ยงดูเชิงบวก, เด็กซน, ลูกไม่ฟัง, วิธีเลี้ยงลูก, จิตวิทยาเด็ก, พ่อแม่ยุคใหม่, เด็กปฐมวัย" />
+  <meta name="author" content="ผู้เชี่ยวชาญด้านพัฒนาการเด็ก" />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="Thai" />
+  <link rel="canonical" href="https://high-spirited-child-book.netlify.app/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://high-spirited-child-book.netlify.app/" />
+  <meta property="og:title" content="อย่ากลัวเด็กดื้อ! | เข้าใจลูกน้อยพลังงานสูง" />
+  <meta property="og:description"
+    content="เปลี่ยนมุมมอง... เปลี่ยนเด็กดื้อให้เป็นเด็กฉลาด กล้าคิด กล้าทำ คู่มือสำหรับพ่อแม่ของเด็กวัย 1-6 ขวบ" />
+  <meta property="og:image" content="https://high-spirited-child-book.netlify.app/promo-banner.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="th_TH" />
+  <meta property="og:site_name" content="อย่ากลัวเด็กดื้อ!" />
+  <meta property="book:author" content="ผู้เชี่ยวชาญด้านพัฒนาการเด็ก" />
+  <meta property="book:tag" content="parenting" />
+  <meta property="book:tag" content="child development" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://high-spirited-child-book.netlify.app/" />
+  <meta name="twitter:title" content="อย่ากลัวเด็กดื้อ! | เข้าใจลูกน้อยพลังงานสูง" />
+  <meta name="twitter:description" content="เปลี่ยนมุมมอง... เปลี่ยนเด็กดื้อให้เป็นเด็กฉลาด กล้าคิด กล้าทำ" />
+  <meta name="twitter:image" content="https://high-spirited-child-book.netlify.app/promo-banner.png" />
+
+  <!-- Structured Data / JSON-LD for SEO & AEO -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Book",
+      "name": "อย่ากลัวเด็กดื้อ! เข้าใจลูกน้อยพลังงานสูง",
+      "alternateName": "Don't Fear Stubborn Children",
+      "description": "คู่มือสำหรับพ่อแม่ยุคใหม่ เข้าใจพฤติกรรมเด็กวัย 1-6 ขวบที่มีพลังงานสูง เปลี่ยนเด็กดื้อให้เป็นเด็กฉลาด กล้าคิด กล้าทำ",
+      "inLanguage": "th",
+      "author": {
+        "@type": "Person",
+        "name": "ผู้เชี่ยวชาญด้านพัฒนาการเด็ก"
+      },
+      "genre": ["Parenting", "Child Development", "Psychology"],
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Parents of children aged 1-6"
+      },
+      "url": "https://high-spirited-child-book.netlify.app/",
+      "image": "https://high-spirited-child-book.netlify.app/cover.png"
+    }
+    </script>
+
+  <!-- FAQ Schema for AEO (Answer Engine Optimization) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "เด็กดื้อคืออะไร และแตกต่างจากเด็กพลังงานสูงอย่างไร?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "เด็กที่มักถูกเรียกว่า 'ดื้อ' มักเป็นเด็กพลังงานสูง (High-Spirited Child) ที่มีลักษณะเฉพาะ เช่น กระตือรือร้นสูง อยากรู้อยากเห็นมาก เปิดเผยต่อประสบการณ์ใหม่ และมีทักษะสังคมที่ดี ซึ่งล้วนเป็นคุณลักษณะที่ดีและสามารถพัฒนาเป็นจุดแข็งในอนาคตได้"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "วิธีเลี้ยงลูกดื้อที่ถูกต้องคืออะไร?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ใช้เทคนิคการเลี้ยงดูเชิงบวก ได้แก่ 1) ให้ตัวเลือกแทนการสั่ง 2) บอกสิ่งที่อยากให้ทำแทนสิ่งที่ห้าม 3) ให้สัญญาณล่วงหน้า 4) ใช้เกมและความสนุก 5) รับรู้ความรู้สึกก่อนแก้ปัญหา 6) สร้างกิจวัตรที่คาดเดาได้"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ทำไมลูกถึงไม่ยอมฟังคำพูด?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "เด็กวัย 1-6 ขวบมีสมองส่วนหน้า (Prefrontal Cortex) ที่ยังพัฒนาไม่เต็มที่ ทำให้ยังไม่สามารถควบคุมแรงกระตุ้น ยับยั้งความอยากรู้ หรือจัดการอารมณ์ได้อย่างสมบูรณ์ นี่คือพัฒนาการปกติ ไม่ใช่ความดื้อ"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "เด็กพลังงานสูงจะเติบโตเป็นอย่างไร?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "เด็กพลังงานสูงมีศักยภาพที่จะเติบโตเป็นผู้นำที่แข็งแกร่ง นักคิดสร้างสรรค์ นักวิจัย นักกีฬา หรือผู้ประกอบการ หากได้รับการเลี้ยงดูที่เข้าใจและสนับสนุนอย่างเหมาะสม"
+          }
+        }
+      ]
+    }
+    </script>
+
+  <!-- Article Schema for main content -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "อย่ากลัวเด็กดื้อ! คู่มือเข้าใจลูกน้อยพลังงานสูง",
+      "description": "เข้าใจพฤติกรรมเด็กวัย 1-6 ขวบที่มีพลังงานสูง และเทคนิคการเลี้ยงดูเชิงบวก",
+      "author": {
+        "@type": "Person",
+        "name": "ผู้เชี่ยวชาญด้านพัฒนาการเด็ก"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "อย่ากลัวเด็กดื้อ!",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://high-spirited-child-book.netlify.app/favicon.svg"
+        }
+      },
+      "datePublished": "2025-12-10",
+      "image": "https://high-spirited-child-book.netlify.app/cover.png",
+      "mainEntityOfPage": "https://high-spirited-child-book.netlify.app/"
+    }
+    </script>
+
+  <!-- Thai Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600;700&family=Sarabun:wght@300;400;600;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>

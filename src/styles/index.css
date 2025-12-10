@@ -294,6 +294,111 @@ em {
   align-items: center;
 }
 
+/* Desktop actions (PDF download, GitHub) - hidden on mobile */
+.header-actions-desktop {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+/* Mobile options menu - hidden on desktop */
+.header-options-mobile {
+  display: none;
+  position: relative;
+}
+
+.options-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.options-toggle:hover {
+  background: var(--primary-50);
+  color: var(--primary-600);
+  border-color: var(--primary-300);
+}
+
+.options-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 180px;
+  background: var(--bg-card);
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-2);
+  z-index: 200;
+  animation: dropdownFadeIn 0.2s ease;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.options-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.options-item:hover {
+  background: var(--primary-50);
+  color: var(--primary-700);
+}
+
+.options-item.github-option {
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.options-item .download-btn {
+  width: 100%;
+  justify-content: flex-start;
+  background: transparent;
+  color: var(--text-secondary);
+  border: none;
+  padding: 0;
+  font-size: var(--text-sm);
+}
+
+.options-item .download-btn:hover {
+  color: var(--primary-700);
+  transform: none;
+  box-shadow: none;
+}
+
+.options-item .download-btn span {
+  display: inline !important;
+}
+
+[data-theme="dark"] .options-dropdown {
+  background: var(--bg-secondary);
+  border-color: var(--neutral-700);
+}
+
 /* ===================================
    Theme Toggle Button
 =================================== */
@@ -766,12 +871,20 @@ em {
     font-size: var(--text-base);
   }
 
-  .theme-toggle {
-    display: none;
-  }
+
 
   .header-actions {
     gap: var(--space-2);
+  }
+
+  /* Hide desktop buttons on mobile */
+  .header-actions-desktop {
+    display: none;
+  }
+
+  /* Show mobile options menu */
+  .header-options-mobile {
+    display: block;
   }
 
   .download-btn span {
@@ -1071,4 +1184,25 @@ em {
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+/* Rating Loading & Error States */
+.rating-loading {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  padding: var(--space-4);
+}
+
+.rating-error {
+  font-size: var(--text-sm);
+  color: #dc2626;
+  padding: var(--space-2) var(--space-3);
+  background: #fef2f2;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-3);
+}
+
+[data-theme="dark"] .rating-error {
+  background: #450a0a;
+  color: #f87171;
 }

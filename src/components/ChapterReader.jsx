@@ -110,7 +110,11 @@ export default function ChapterReader() {
             {/* Chapter Navigation */}
             <nav className="chapter-nav">
                 {prevChapter ? (
-                    <Link to={prevChapter.path} className="chapter-nav-btn">
+                    <Link
+                        to={prevChapter.path}
+                        className="chapter-nav-btn"
+                        onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })}
+                    >
                         <span className="chapter-nav-label">← ก่อนหน้า</span>
                         <span className="chapter-nav-title">{prevChapter.label}</span>
                     </Link>
@@ -119,7 +123,11 @@ export default function ChapterReader() {
                 )}
 
                 {nextChapter && (
-                    <Link to={nextChapter.path} className="chapter-nav-btn">
+                    <Link
+                        to={nextChapter.path}
+                        className="chapter-nav-btn"
+                        onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })}
+                    >
                         <span className="chapter-nav-label">ถัดไป →</span>
                         <span className="chapter-nav-title">{nextChapter.label}</span>
                     </Link>
